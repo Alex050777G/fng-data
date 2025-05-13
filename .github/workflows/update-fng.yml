@@ -1,0 +1,12 @@
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Rendre le script exécutable
+        run: chmod +x update_fng.sh
+
+      - name: Fetch and commit FNG CSV
+        run: |
+          bash ./update_fng.sh
